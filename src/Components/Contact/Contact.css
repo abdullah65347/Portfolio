@@ -1,0 +1,79 @@
+.contact-popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+    /* Dim background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.contact-popup-container {
+    place-self: center;
+    width: max(28vw, 330px);
+    color: #808080;
+    background-color: #B09B71;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 25px 30px;
+    border-radius: 8px;
+    font-size: 14px;
+    animation: fadeIn 0.5s;
+    box-shadow: 2px 2px 4px rgb(18, 18, 18);
+}
+
+.contact-popup-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: black;
+}
+
+.contact-popup-title img {
+    width: 16px;
+    cursor: pointer;
+}
+
+.contact-popup-inputs {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+}
+
+.contact-popup-inputs input:focus {
+    border: none;
+
+}
+
+.contact-popup-inputs input,
+textarea {
+    width: max(20vw, 275px);
+    padding: 10px;
+    margin: 5px;
+    border: none;
+    border-radius: 4px;
+    resize: none;
+    box-shadow: 2px 2px 4px rgb(18, 18, 18);
+}
+
+.contact-popup-inputs textarea {
+    height: max(8vw, 85px);
+    resize: none;
+}
+
+.contact-popup-container button {
+    background-color: #200a0a;
+    font-size: 18px;
+    color: white;
+    padding: 8px 20px;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+}

@@ -1,0 +1,125 @@
+.aboutMe-container {
+    background-color: #200a0a;
+    padding: 20px;
+}
+
+.aboutMe-container>h1 {
+    text-align: center;
+    font-size: 34px;
+    font-weight: 500;
+    color: rgb(209, 209, 209);
+    margin-top: 24px;
+    padding: 20px;
+}
+
+.aboutMe-content {
+    padding: 20px;
+    max-width: 90%;
+    margin: 0 auto;
+    color: white;
+    border: 2px solid #87431D;
+    background-color: rgb(0, 0, 0, 0.5);
+    box-shadow: 2px 2px 10px black;
+    border-radius: 5%;
+}
+
+.aboutMe-upper-section {
+    display: flex;
+}
+
+.aboutMe-upper-section-left {
+    width: 250px;
+    padding: 0 20px;
+}
+
+.aboutMe-upper-section-left img {
+    height: 180px;
+    width: 180px;
+    border-radius: 50%;
+    box-shadow: -2px 2px 10px black;
+}
+
+.aboutMe-upper-section-right h2 {
+    margin: 10px;
+    color: #87431D;
+}
+
+.aboutMe-intro p {
+    padding: 6px;
+    max-width: 900px;
+    font-weight: 200;
+    text-align: justify;
+}
+
+.aboutMe-lower-section h1 {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #87431D;
+}
+
+.aboutMe-lower-subsections {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 15px;
+}
+
+.skillContainer {
+    padding: 20px;
+    margin: 5px;
+    width: 300px;
+    border-radius: 5%;
+    color: black;
+    background-color: #B09B71;
+}
+
+.skillContainer h2 {
+    text-align: center;
+}
+
+.skillContainer p {
+    margin: 12px 0px;
+}
+
+.skillContainer ul {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 6px;
+}
+
+.skillContainer li {
+    padding: 6px;
+    color: white;
+    font-weight: 150;
+    background-color: #200a0a;
+    border-radius: 6px;
+}
+
+@media (max-width:800px) {
+    .aboutMe-upper-section {
+        flex-direction: column;
+    }
+
+    .aboutMe-upper-section-left {
+        margin: 0 auto;
+    }
+
+}
+
+@media (max-width:500px) {
+    .aboutMe-content {
+        max-width: 99%;
+    }
+
+    .aboutMe-upper-section-left img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .aboutMe-upper-section-left {
+        display: flex;
+        justify-content: center;
+    }
+}

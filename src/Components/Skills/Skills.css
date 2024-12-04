@@ -1,0 +1,84 @@
+.skills-outer-container {
+    background-color: #200a0a;
+    padding-bottom: 70px;
+}
+
+.skills-container {
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.skills-heading h2 {
+    margin-top: 60px;
+    text-align: center;
+    margin-bottom: max(3vw, 34px);
+    font-size: 34px;
+    font-weight: 500;
+    color: rgb(209, 209, 209);
+}
+
+.skills-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    gap: 20px;
+}
+
+.skills-data {
+    width: 155px;
+    background-color: rgba(0, 0, 0, 0.479);
+    padding: 15px;
+    margin: 5px 5px;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.639);
+    color: white;
+
+}
+
+.skills-data:hover {
+
+    transform: translateY(-5px);
+    background-color: rgb(0, 0, 0);
+}
+
+.skills-icon img {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 7px;
+}
+
+#springMVC {
+    width: 75px;
+}
+
+.skills-name h3 {
+    font-size: 18px;
+    margin: 0;
+}
+
+@media (max-width: 900px) {
+    .skills-data {
+        width: 150px;
+        padding: 12px;
+    }
+
+    .skills-card {
+        gap: 15px;
+    }
+
+    .skills-name h3 {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 500px) {
+    .skills-data {
+        width: 150px;
+    }
+
+    .skills-name h3 {
+        font-size: 14px;
+    }
+}
