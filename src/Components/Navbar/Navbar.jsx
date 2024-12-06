@@ -3,7 +3,7 @@ import { assets } from '../../assets/assets';
 import './Navbar.css';
 
 const Navbar = ({ showLogin, setShowLogin }) => {
-    const [menu, setMenu] = useState("Home");
+    const [menu, setMenu] = useState("Header");
 
     const toggleForm = () => {
         setShowLogin(!showLogin);
@@ -27,8 +27,8 @@ const Navbar = ({ showLogin, setShowLogin }) => {
                 <ul className="navbar-list">
                     <li>
                         <a
-                            onClick={() => scrollToSection("home")}
-                            className={menu === "Home" ? "active" : ""}
+                            onClick={() => scrollToSection("header")}
+                            className={menu === "Header" ? "active" : ""}
                             href="#header"
                         >
                             HOME
