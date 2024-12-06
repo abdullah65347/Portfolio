@@ -17,7 +17,7 @@ const Header = ({ showLogin, setShowLogin }) => {
                     </div>
                 </div>
                 <div className="header-intro-buttons">
-                    <a href='https://drive.google.com/file/d/1XzezsjRCd0G41MdAqkm5zvMm-ZqpaC6s/view?usp=sharing' target="_blank"  >
+                    <a href='https://drive.google.com/drive/folders/1Q6MOT2njJLqL8ioqMQU5bGia32bYsJzv?usp=sharing' target="_blank"  >
                         <button>Download Resume
                             <img src={assets.download_icon} alt="Error404" />
                         </button></a>
