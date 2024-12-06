@@ -1,22 +1,40 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { assets } from '../../assets/assets';
 import './Navbar.css';
 
 const Navbar = ({ showLogin, setShowLogin }) => {
-    const [menu, setMenu] = useState("Header");
+    const [menu, setMenu] = useState("Home");
 
     const toggleForm = () => {
         setShowLogin(!showLogin);
         document.body.style.overflow = 'hidden';
     };
 
-    const scrollToSection = (sectionId) => {
-        const section = document.getElementById(sectionId);
-        if (section) {
-            section.scrollIntoView({ behavior: 'auto' });  // Instant jump
-            setMenu(sectionId.charAt(0).toUpperCase() + sectionId.slice(1));  // Update active menu
+    const handleScroll = () => {
+        const sections = [
+            { id: "home", offsetTop: 0 },
+            { id: "about", offsetTop: document.querySelector("#about")?.offsetTop || 0 },
+            { id: "skills", offsetTop: document.querySelector("#skills")?.offsetTop || 0 },
+            { id: "projects", offsetTop: document.querySelector("#projects")?.offsetTop || 0 }
+        ];
+
+        const scrollPosition = window.scrollY + 80;
+        const currentSection = sections.find((section, index) => {
+            const nextSection = sections[index + 1];
+            return scrollPosition >= section.offsetTop && (!nextSection || scrollPosition < nextSection.offsetTop);
+        });
+
+        if (currentSection) {
+            setMenu(currentSection.id.charAt(0).toUpperCase() + currentSection.id.slice(1));
         }
     };
+
+    useEffect(() => {
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
     return (
         <div className='navbar'>
@@ -25,42 +43,10 @@ const Navbar = ({ showLogin, setShowLogin }) => {
             </div>
             <div className="navbar-menu">
                 <ul className="navbar-list">
-                    <li>
-                        <a
-                            onClick={() => scrollToSection("header")}
-                            className={menu === "Header" ? "active" : ""}
-                            href="#header"
-                        >
-                            HOME
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            onClick={() => scrollToSection("about")}
-                            className={menu === "About" ? "active" : ""}
-                            href="#about"
-                        >
-                            ABOUT
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            onClick={() => scrollToSection("skills")}
-                            className={menu === "Skills" ? "active" : ""}
-                            href="#skills"
-                        >
-                            SKILLS
-                        </a>
-                    </li>
-                    <li>
-                        <a
-                            onClick={() => scrollToSection("projects")}
-                            className={menu === "Projects" ? "active" : ""}
-                            href="#projects"
-                        >
-                            PROJECTS
-                        </a>
-                    </li>
+                    <li><a onClick={() => setMenu("Home")} className={menu === "Home" ? "active" : ""} href="#header">HOME</a></li>
+                    <li><a onClick={() => setMenu("About")} className={menu === "About" ? "active" : ""} href="#about">ABOUT</a></li>
+                    <li><a onClick={() => setMenu("Skills")} className={menu === "Skills" ? "active" : ""} href="#skills">SKILLS</a></li>
+                    <li><a onClick={() => setMenu("Projects")} className={menu === "Projects" ? "active" : ""} href="#projects">PROJECTS</a></li>
                 </ul>
             </div>
             <div className="navbar-contact">
