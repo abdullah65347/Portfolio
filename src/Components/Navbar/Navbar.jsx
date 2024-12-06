@@ -18,7 +18,7 @@ const Navbar = ({ showLogin, setShowLogin }) => {
             { id: "projects", offsetTop: document.querySelector("#projects")?.offsetTop || 0 }
         ];
 
-        const scrollPosition = window.scrollY;
+        const scrollPosition = window.scrollY + 50;
         const currentSection = sections.find((section, index) => {
             const nextSection = sections[index + 1];
             return scrollPosition >= section.offsetTop && (!nextSection || scrollPosition < nextSection.offsetTop);

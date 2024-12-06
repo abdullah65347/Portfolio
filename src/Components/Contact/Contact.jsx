@@ -13,6 +13,15 @@ const Contact = ({ setShowLogin }) => {
         document.body.style.overflow = 'auto';
 
     };
+    const [name, setName] = useState('');
+    const [subject, setSubject] = useState('');
+
+    const handleNameChange = (event) => {
+        const fullName = event.target.value;
+        const firstName = fullName.split(' ')[0]; // Extract the first name
+        setName(fullName);
+        setSubject(`${firstName} sent a message from Portfolio`);
+    };
 
     const onSubmit = async (event) => {
         event.preventDefault();
@@ -47,9 +56,10 @@ const Contact = ({ setShowLogin }) => {
                     <img onClick={() => toggleForm()} src={assets.cross_icon} alt="" />
                 </div>
                 <div className="contact-popup-inputs">
-                    <input type="text" placeholder="Name" name='name' required />
-                    <input type="email" placeholder="Email" name='email' required />
-                    <textarea placeholder='Enter your message here...' name='message'></textarea>
+                    <input type="text" placeholder="Name" name="name" value={name} onChange={handleNameChange} required />
+                    <input type="hidden" name="subject" value={subject} />
+                    <input type="email" placeholder="Email" name="email" required />
+                    <textarea placeholder="Enter your message here..." name="message"></textarea>
                     <button type='submit'>Submit</button>
                 </div>
 
@@ -58,7 +68,7 @@ const Contact = ({ setShowLogin }) => {
                 <div className="popup-overlay">
                     <div className="popup-content">
                         <h2>Message Sent Successfully!</h2>
-                        <button onClick={closePopup}>Close</button>
+                        <button onClick={() => { closePopup(); setShowLogin(false); }}>Close</button>
                     </div>
                 </div>
             )}

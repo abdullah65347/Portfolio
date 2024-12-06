@@ -116,3 +116,10 @@
         font-size: 14px;
     }
 }
+
+@media (max-width:350px) {
+
+    .navbar-menu li a {
+        font-size: 12px;
+    }
+}
