@@ -52,7 +52,7 @@ const Contact = ({ setShowLogin }) => {
         <div className="contact-popup">
             <form onSubmit={onSubmit} ref={formRef} className="contact-popup-container">
                 <div className="contact-popup-title" >
-                    <h2>Let Connect!!</h2>
+                    <h2>Let's Connect!!</h2>
                     <img onClick={() => toggleForm()} src={assets.cross_icon} alt="" />
                 </div>
                 <div className="contact-popup-inputs">
